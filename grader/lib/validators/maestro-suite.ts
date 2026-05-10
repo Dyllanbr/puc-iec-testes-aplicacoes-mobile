@@ -262,6 +262,34 @@ async function main() {
         : 'README presente mas não menciona alguns flows',
   });
 
+  // Critério 6: uso de id (testID) vs text-only — locators estáveis
+  // App TestesQAMobile v1.1+ tem testID em todos elementos críticos.
+  // Flows que usam `id:` são mais resistentes a tradução/UI changes.
+  let totalLocators = 0;
+  let idLocators = 0;
+  for (const f of flowFiles) {
+    const content = readFileSync(f, 'utf8');
+    // tapOn/assertVisible com `text:` (frágil)
+    const textMatches = content.match(/(?:tapOn|assertVisible|assertNotVisible):\s*\n\s+text:/g);
+    // tapOn/assertVisible com `id:` (estável)
+    const idMatches = content.match(/(?:tapOn|assertVisible|assertNotVisible):\s*\n\s+id:/g);
+    // Plus tapOn:text inline
+    const inlineTextMatches = content.match(/tapOn:\s*"[^"]+"/g);
+
+    totalLocators += (textMatches?.length ?? 0) + (idMatches?.length ?? 0) + (inlineTextMatches?.length ?? 0);
+    idLocators += idMatches?.length ?? 0;
+  }
+  const idRatio = totalLocators > 0 ? idLocators / totalLocators : 0;
+  criteria.push({
+    id: 'use-test-id',
+    description: 'Flows usam id (testID) em vez de text/inline (locators estáveis)',
+    weight: 1,
+    earned: +(idRatio * 1).toFixed(2),
+    publicNote: totalLocators === 0
+      ? 'Nenhum locator detectado'
+      : `${idLocators}/${totalLocators} locators usam id (${Math.round(idRatio * 100)}%)`,
+  });
+
   const { total, score } = computeScore(criteria);
   const minimo = passThreshold(total, 60);
   const { publicBreakdown, privateBreakdown } = buildBreakdowns(criteria);

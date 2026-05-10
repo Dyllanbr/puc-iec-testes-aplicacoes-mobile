@@ -7,12 +7,24 @@
 
 ## Objetivo
 
-Implementar suíte Maestro com **5 flows YAML cobrindo user journeys críticos** de um app mobile, executável em emulator Android sem flake.
+Implementar suíte Maestro com **mínimo 5 flows YAML cobrindo user journeys críticos** do app oficial **TestesQAMobile**, executável em emulator Android sem flake.
+
+## App alvo: TestesQAMobile
+
+App oficial da disciplina, publicado nas lojas:
+
+- 🍎 [App Store BR](https://apps.apple.com/br/app/testes-qa-mobile/id6755933674)
+- 🤖 [Play Store](https://play.google.com/store/apps/details?id=com.apptestesmobile)
+- 📦 Bundle: `com.apptestesmobile`
+
+Instale gratuitamente. App tem 35 exercícios em 12 categorias com bugs propositais.
 
 ## Stack obrigatória
 
-- **Maestro CLI** ≥ 1.x (instalar via `curl -Ls "https://get.maestro.mobile.dev" | bash`)
-- App de referência: **fornecido em `starter/app-referencia/`** (ou app à sua escolha — desde que documente como instalar)
+- **Maestro CLI** ≥ 1.x — ver [`docs/INSTALACAO_MAESTRO.md`](../../docs/INSTALACAO_MAESTRO.md) (Mac/Linux/Windows + Docker)
+- **App TestesQAMobile** instalado em emulator/device (via Play Store)
+- Emulator Android API 30+ (Pixel 8 API 34 recomendado)
+- Java 17 + Android Studio
 - Emulator Android (Pixel 8 API 34 recomendado, mas qualquer Android API 30+)
 
 ## Como entregar
@@ -74,17 +86,20 @@ Abra Pull Request para `main` do upstream `jacksonsmith/puc-iec-testes-aplicacoe
 - Bot posta comment no PR com score e breakdown
 - Status check verde (pass) ou vermelho (review needed)
 
-## Critérios de avaliação (15 pts)
+## Critérios de avaliação (16 pts)
 
 | # | Critério | Peso |
 |---|----------|------|
 | 1 | Mínimo 5 flows YAML em `flows/` | 4 |
 | 2 | Cada flow declara `appId` no header | 2 |
-| 3 | Maestro valida sintaxe de todos os flows (`maestro check`) | 4 |
+| 3 | YAML válido + estrutura Maestro (header + steps) | 4 |
 | 4 | Mínimo 5 flows passam em emulator Android (execução real) | 4 |
 | 5 | README descreve cada flow + comando para executar | 1 |
+| 6 | Flows usam `id:` (testID) em vez de `text:` quando possível | 1 |
 
-**Pass threshold:** 60% (9/15) para status check verde.
+**Pass threshold:** 60% (10/16) para status check verde.
+
+> **Sobre critério 6:** App TestesQAMobile v1.1+ tem `testID` em todos elementos críticos (botões, inputs, cards). Use `tapOn: { id: "..." }` em vez de `tapOn: { text: "..." }` para flows mais estáveis (resistentes a tradução, A/B test, refactor de UI). Lista de testIDs disponíveis no [`TESTID_CONVENTION.md`](../../docs/TESTID_CONVENTION.md) do app (publicado em release notes da v1.1).
 
 > Score detalhado por critério é compartilhado no comment público; **breakdown completo** com diagnóstico de cada falha fica em artifact privado (acesso do prof).
 
