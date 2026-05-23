@@ -20,7 +20,13 @@ QA mobile falha por falta de **estratégia consciente**. Antes de automatizar, �
    | **Wikipedia iOS** | Swift nativo | <https://github.com/wikimedia/wikipedia-ios> |
    | **Bluesky social-app** | React Native + Expo | <https://github.com/bluesky-social/social-app> |
 
-   > Pode escolher outro app open-source (≥100 stars, commits últimos 6 meses), mas os 3 acima estão garantidos com material rico pra análise. **Recomendo escolher um dos 3.**
+   > **Pode escolher QUALQUER outro app open-source** (≥100 stars, commits últimos 6 meses) — desde que tenha **testes visíveis** no repo. Mas **fica mais difícil**:
+   > - Pode cair em repo sem testes (= nada pra analisar)
+   > - Pode cair em repo com docs ruins ou desatualizadas (= horas perdidas garimpando)
+   > - Pode escolher app não-mobile sem perceber (web/backend/desktop)
+   > - Tem que validar critérios sozinho (stars, atividade, mobile-only, testes visíveis)
+   >
+   > **Os 3 sugeridos já foram pré-validados por mim** — material rico garantido, vão te economizar tempo. **Recomendo fortemente escolher um dos 3.**
 
 2. **Investigar** a estratégia atual seguindo o **`guia-investigacao.md`** (passo a passo de **onde olhar** pra descobrir cada coisa).
    > **Não fique só no código.** Knott (2014) prega 40% da pirâmide mobile como manual/exploratório. Investigue também: `CONTRIBUTING.md`, beta programs (TestFlight / Firebase App Distribution), bug bounty, issues triadas, reviews da loja, crash reporting. Tudo conta como estratégia de QA.
