@@ -1,6 +1,6 @@
 # README — Atividade 2 Suíte Unitária RN — [Seu Nome]
 
-> Use isso como base do README do seu fork (`exercicios/02-setup-suite-unitaria/starter/README-entrega.md` ou no PR).
+> Use isso como base do README do seu fork (`exercicios/02-setup-suite-unitaria/exercicio/README-entrega.md` ou no PR).
 
 ## Identificação
 
@@ -12,7 +12,7 @@
 ## Como rodar
 
 ```bash
-cd exercicios/02-setup-suite-unitaria/starter
+cd exercicios/02-setup-suite-unitaria/exercicio
 npm install
 npm test
 npm run test:coverage

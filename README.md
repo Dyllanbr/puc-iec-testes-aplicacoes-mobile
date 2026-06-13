@@ -141,9 +141,8 @@ Algumas atividades são **avaliadas automaticamente** em PR. Workflow:
 
 | # | Atividade | Status |
 |---|-----------|--------|
-| A4 | [Suíte Maestro Cross-Platform](./exercicios/04-suite-maestro-cross-platform/) | ✅ Ativo |
-| A2 | Setup + Suíte Unitária | 🔧 Em breve |
-| A3 | Suíte Native UI (Espresso) | 🔧 Em breve |
+| A2 | [Setup + Suíte Unitária](./exercicios/02-setup-suite-unitaria/) | 🔧 Em breve |
+| A3 | [E2E com Detox](./exercicios/03-e2e-detox/) | 🔧 Em breve |
 | A1, A5 | Análise de Cobertura, Performance/Security | 📝 Manual (correção pelo prof) |
 
 Ver [`grader/README.md`](./grader/README.md) para documentação técnica do autograder.

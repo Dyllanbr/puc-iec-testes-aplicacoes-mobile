@@ -1,4 +1,4 @@
-# Starter — Testes de Aplicações Mobile · Aula 2
+# Exercício — Testes de Aplicações Mobile · Aula 3
 
 App Expo + TypeScript **já implementado e funcionando**. Mesmo app que a turma de Arquitetura constrói — aqui o foco é o oposto: **escrever a suíte de testes unitários** sobre código que já existe.
 
@@ -44,7 +44,7 @@ __tests__/                    ← SUA ENTREGA (Jest + RNTL)
 
 ```bash
 git clone https://github.com/SEU-USUARIO/puc-iec-testes-aplicacoes-mobile.git
-cd puc-iec-testes-aplicacoes-mobile/exercicios/02-setup-suite-unitaria/starter
+cd puc-iec-testes-aplicacoes-mobile/exercicios/02-setup-suite-unitaria/exercicio
 npm install
 npm test          # 3 verdes (posterUrl) + alguns vermelhos (complete o expect) + desafios (todo)
 ```

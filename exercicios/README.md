@@ -6,15 +6,14 @@ Atividades das 6 aulas. **Sem gabaritos** — entregas avaliadas no Canvas.
 
 | # | Aula | Atividade | Pontos | Prazo |
 |---|------|-----------|--------|-------|
-| 1 | 1 | [Análise de Cobertura](./01-analise-cobertura/) | 15 | 27/05/2026 |
-| 2 | 2 | [Setup + Suíte Unitária](./02-setup-suite-unitaria/) | 10 | 07/06/2026 |
-| 3 | 3 | [Suíte Native UI (Espresso + XCUITest)](./03-suite-native-ui/) | 15 | 14/06/2026 |
-| 4 | 4 | [Suíte Maestro Cross-Platform](./04-suite-maestro/) | 15 | 21/06/2026 |
-| 5 | 5 | [Performance + Security Report](./05-performance-security/) | 10 | 01/07/2026 |
-| Q | 5 | Quiz IA Mobile Testing (Canvas) | 5 | 01/07/2026 |
-| **PF** | 6 | **[Projeto Final em Grupo](./06-projeto-final-grupo/)** | **30** | Apresentação 02/07/2026 |
+| 1 | 1 | [Análise de Cobertura](./01-analise-cobertura/) ou [Casos de Teste Funcionais](./01-casos-de-teste-funcionais/) | 15 | 27/05/2026 |
+| 2 | 3 | [Setup + Suíte Unitária](./02-setup-suite-unitaria/) | 10 | 21/06/2026 |
+| 3 | 4 | [E2E com Detox](./03-e2e-detox/) | 15 | 28/06/2026 |
+| 5 | 5 | Performance + Security Report | 10 | 08/07/2026 |
+| Q | 5 | Quiz IA Mobile Testing (Canvas) | 5 | 08/07/2026 |
+| **PF** | 6 | **Projeto Final** | **35** | Apresentação 09/07/2026 |
 
-Total: **100 pontos**.
+> ⚠️ Datas atualizadas (aulas remanejadas +1 semana). A distribuição final de pontos está em revisão.
 
 ## Política de prazos
 

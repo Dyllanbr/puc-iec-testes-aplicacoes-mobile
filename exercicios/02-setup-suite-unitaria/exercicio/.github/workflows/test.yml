@@ -1,14 +1,18 @@
 name: Suite Unitaria (Atividade 2 - Testes Mobile)
 
 on:
-  push:          # qualquer branch (inclui entrega/atividade-2-...)
-  pull_request:  # valida ao abrir PR
+  push:                 # qualquer branch do próprio repo
+  pull_request_target:  # PRs de forks — roda sem aprovação manual
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # pull_request_target roda no contexto da base — precisa fazer checkout
+          # explícito do HEAD do PR pra rodar o código do aluno
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       - uses: actions/setup-node@v4
         with:

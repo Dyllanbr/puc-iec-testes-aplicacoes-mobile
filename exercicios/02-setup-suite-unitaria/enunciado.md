@@ -1,15 +1,16 @@
 # Atividade 2 — Suíte Unitária sobre App RN (10 pts)
 
 **Disciplina:** Testes de Aplicações Mobile
-**Entrega:** até **11/06/2026** (2 semanas)
+**Entrega:** até **21/06/2026**
 **Modalidade:** individual
 **Tempo estimado:** **~1-2 horas**
+**Dificuldade:** ⭐⭐ Médio — Jest/Node (sem simulador); escrever testes sobre código existente
 
 ---
 
 ## Por que essa atividade
 
-Aula 2 cobriu **unit testing em React Native** (Jest + funções puras + `jest.mock`). Aqui você exercita o core do QA: **escrever uma suíte de testes verde sobre código que já existe** — sem precisar implementar features.
+A Aula 3 cobriu **unit testing em React Native** (Jest + funções puras + `jest.mock` + RNTL). Aqui você exercita o core do QA: **escrever uma suíte de testes verde sobre código que já existe** — sem precisar implementar features.
 
 O app-alvo é o **mesmo app TMDB da disciplina de Arquitetura** (já implementado nesta versão). Você testa as camadas `store`, `utils` e `data`.
 
@@ -21,7 +22,7 @@ O app-alvo é o **mesmo app TMDB da disciplina de Arquitetura** (já implementad
 # 1. Fork do repo público no GitHub
 # 2. Clone o SEU fork
 git clone https://github.com/SEU-USUARIO/puc-iec-testes-aplicacoes-mobile.git
-cd puc-iec-testes-aplicacoes-mobile/exercicios/02-setup-suite-unitaria/starter
+cd puc-iec-testes-aplicacoes-mobile/exercicios/02-setup-suite-unitaria/exercicio
 npm install
 npm test     # posterUrl já passa verde (3 testes). O resto é seu.
 ```
@@ -32,7 +33,7 @@ npm test     # posterUrl já passa verde (3 testes). O resto é seu.
 
 ## Tarefa (escrever testes em `__tests__/`)
 
-O starter já tem **1 exemplo resolvido** (`posterUrl.test.ts`) — use de modelo. Os outros arquivos têm `it.todo` marcando o que falta.
+O exercício já tem **1 exemplo resolvido** (`posterUrl.test.ts`) — use de modelo. Os outros arquivos têm `it.todo` marcando o que falta.
 
 ### 1. `favoritesStore.test.ts` — Zustand (6 testes)
 
@@ -109,7 +110,7 @@ npm run test:coverage
 
 1. Fork do repo público: <https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile>
 2. Branch `entrega/atividade-2-<seu-nome>` no seu fork
-3. Trabalhe direto em `exercicios/02-setup-suite-unitaria/starter/__tests__/` no SEU fork
+3. Trabalhe direto em `exercicios/02-setup-suite-unitaria/exercicio/__tests__/` no SEU fork
 4. Commit + push pro seu fork (**NÃO comite `node_modules/` nem `coverage/`** — `.gitignore` já cuida)
 5. Submeter no Canvas com link do commit (ou PR)
 
@@ -119,11 +120,11 @@ npm run test:coverage
 
 - **Não implementa feature** — o código de produção já está pronto
 - **Não precisa rodar o app** (sem token/simulador) — testes (incl. RNTL) rodam só com Node
-- **Não precisa E2E** (app rodando ponta a ponta) — isso é Aula 3 (Detox/Maestro)
+- **Não precisa E2E** (app rodando ponta a ponta) — isso é a Aula 4 (Detox)
 
 ## Material de apoio (todos no GitHub público)
 
-- **[starter (app + scaffolds)](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/tree/main/exercicios/02-setup-suite-unitaria/starter)** — README com tasks
+- **[exercício (app + scaffolds)](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/tree/main/exercicios/02-setup-suite-unitaria/exercicio)** — README com tasks
 - **[guia-passo-a-passo.md](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/guia-passo-a-passo.md)** — comandos + troubleshooting
 - **[template-relatorio.md](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/template-relatorio.md)** — README modelo
-- **[Slide aula 2](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/slides/aula-02/aula-02-setup-manual-unit.pdf)**
+- **[Slide aula 3 — Jest/RNTL](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/slides/aula-03/aula-03-jest-rntl-detox.pdf)**
