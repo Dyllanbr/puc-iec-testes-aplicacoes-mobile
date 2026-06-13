@@ -8,12 +8,11 @@ Atividades das 6 aulas. **Sem gabaritos** — entregas avaliadas no Canvas.
 |---|------|-----------|--------|-------|
 | 1 | 1 | [Análise de Cobertura](./01-analise-cobertura/) ou [Casos de Teste Funcionais](./01-casos-de-teste-funcionais/) | 15 | 27/05/2026 |
 | 2 | 3 | [Setup + Suíte Unitária](./02-setup-suite-unitaria/) | 10 | 21/06/2026 |
-| 3 | 4 | [E2E com Detox](./03-e2e-detox/) | 15 | 28/06/2026 |
-| 5 | 5 | Performance + Security Report | 10 | 08/07/2026 |
-| Q | 5 | Quiz IA Mobile Testing (Canvas) | 5 | 08/07/2026 |
-| **PF** | 6 | **Projeto Final** | **35** | Apresentação 09/07/2026 |
+| 3 | 4 | [Suíte Maestro E2E](./03-maestro-e2e/) | 15 | 28/06/2026 |
+| 4 | 5 | Performance + Security Report | 10 | 08/07/2026 |
+| **PF** | 6 | **Projeto Final** | **50** | Apresentação 09/07/2026 |
 
-> ⚠️ Datas atualizadas (aulas remanejadas +1 semana). A distribuição final de pontos está em revisão.
+Total: **100 pontos**.
 
 ## Política de prazos
 
