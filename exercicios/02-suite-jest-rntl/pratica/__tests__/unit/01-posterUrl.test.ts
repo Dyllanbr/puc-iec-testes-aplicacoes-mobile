@@ -1,6 +1,7 @@
 // __tests__/unit/01-posterUrl.test.ts
 //
-// EXEMPLO RESOLVIDO — comece por aqui, use como modelo pros próximos.
+// 📘 MODELO RESOLVIDO — NÃO é entrega. Já vem pronto: leia e use de molde.
+//    (comece por aqui)
 // Função pura: entrada → saída, sem estado, sem rede. O teste mais barato e estável.
 
 import { posterUrl } from '@/utils/poster-url';

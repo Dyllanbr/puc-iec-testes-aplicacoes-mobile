@@ -1,6 +1,7 @@
 // __tests__/integration/01-useFavorites.test.ts
 //
-// PRÁTICA (não pontua) — aquecimento do Bloco 2.
+// 🔵 PRÁTICA — hands-on do Bloco 2 (aquecimento · NÃO conta nota)
+//    Fazemos juntos em aula pra pegar o jeito do renderHook.
 // `renderHook` roda um hook no ambiente React SEM renderizar tela.
 // Aqui o hook é `useFavorites` (fina camada sobre o store de favoritos).
 //

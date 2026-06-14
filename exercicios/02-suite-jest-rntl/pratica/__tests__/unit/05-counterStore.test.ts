@@ -1,6 +1,9 @@
 // __tests__/unit/05-counterStore.test.ts
 //
-// HANDS-ON — escreva os testes da counterStore (vocês sozinhos).
+// ✅ AVALIATIVO — Atividade 2 · Parte A (conta nota · entrega 21/06)
+//    No hands-on fazemos a favoritesStore juntos; esta aqui é você sozinho.
+//
+// Escreva os testes da counterStore.
 //
 // Mesmo padrão da favoritesStore: resete o estado entre testes.
 //   useCounterStore.getState().increment()

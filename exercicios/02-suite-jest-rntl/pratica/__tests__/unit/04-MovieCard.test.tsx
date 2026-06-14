@@ -1,5 +1,8 @@
 // __tests__/unit/04-MovieCard.test.tsx
 //
+// ✅ AVALIATIVO — Atividade 2 · Parte A (conta nota · entrega 21/06)
+//    Começa no HANDS-ON da aula (juntos) → você TERMINA em casa (sozinho).
+//
 // TESTE DE TELA (React Native Testing Library) — o coração do QA mobile.
 // Testa o que o USUÁRIO vê e faz, não a implementação.
 //

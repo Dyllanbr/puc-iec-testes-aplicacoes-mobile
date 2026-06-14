@@ -1,6 +1,9 @@
 // __tests__/unit/03-favoritesStore.test.ts
 //
-// HANDS-ON / ATIVIDADE 2 — escreva os testes da favoritesStore.
+// ✅ AVALIATIVO — Atividade 2 · Parte A (conta nota · entrega 21/06)
+//    Começa no HANDS-ON da aula (juntos) → você TERMINA em casa (sozinho).
+//
+// Escreva os testes da favoritesStore.
 //
 // Store Zustand é singleton: precisa resetar o estado entre testes
 // (senão um teste contamina o outro). Use o beforeEach abaixo.

@@ -1,6 +1,7 @@
 // __tests__/integration/02-navigation.test.tsx
 //
-// PRÁTICA (não pontua) — integração de navegação.
+// 🔵 PRÁTICA — hands-on do Bloco 2 (NÃO conta nota)
+//    Integração de navegação — só pra praticar.
 // Renderiza o app inteiro (AppNavigator) e verifica que tocar num card
 // leva pra tela de detalhe. Como a lista vem de fetch, a API é mockada.
 //

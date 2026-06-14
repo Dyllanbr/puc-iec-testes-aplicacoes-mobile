@@ -1,6 +1,8 @@
 // __tests__/unit/06-popularMovies.test.ts
 //
-// BÔNUS (camada data) — testar fetchPopularMovies isolando a dependência de rede.
+// ⭐ BÔNUS (+1) — Atividade 2 · Parte A (opcional, pra arredondar a nota)
+//
+// Testar fetchPopularMovies isolando a dependência de rede.
 //
 // jest.mock('@/services/api') troca o módulo real por um mock automático.
 // Aí você controla o que api.get retorna e verifica como foi chamado.

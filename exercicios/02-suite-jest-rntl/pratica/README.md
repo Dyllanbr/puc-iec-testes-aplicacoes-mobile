@@ -7,6 +7,12 @@ App Expo + TypeScript **já implementado e funcionando**. Mesmo app que a turma 
 
 **Você NÃO implementa features.** Stores, services, utils e as telas de integração já estão prontos. Sua entrega são os testes em `__tests__/`.
 
+> **Legenda do cabeçalho de cada arquivo de teste** (lá em cima, no comentário):
+> - 📘 **MODELO RESOLVIDO** — já vem pronto, é só estudar/copiar o estilo (não é entrega)
+> - ✅ **AVALIATIVO** — **conta nota** · começa no hands-on da aula, você **termina sozinho em casa**
+> - 🔵 **PRÁTICA** — hands-on de aquecimento, **não conta nota**
+> - ⭐ **BÔNUS** — opcional, pra arredondar
+
 ---
 
 ## O que está pronto pra você testar

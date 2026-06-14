@@ -1,6 +1,8 @@
 // __tests__/integration/03-movieFlow.integration.test.tsx
 //
-// ⭐ ENTREGA AVALIATIVA — Atividade 2, Parte B (5 pts).
+// ✅ AVALIATIVO — Atividade 2 · Parte B · ENTREGA (5 pts · entrega 21/06)
+//    Começa no HANDS-ON da aula (juntos) → você TERMINA em casa (sozinho).
+//    É ESTE arquivo que conta nota na Parte B (os outros 2 da pasta são prática).
 //
 // Testa o FLUXO entre componentes da versão implementada (src/integration/):
 // a lista busca dados (API mockada) e favoritar um card reflete no contador

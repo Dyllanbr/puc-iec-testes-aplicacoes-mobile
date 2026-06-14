@@ -1,6 +1,9 @@
 // __tests__/unit/02-isTokenError.test.ts
 //
-// HANDS-ON (camada data) — testar a lógica pura do módulo de API.
+// ✅ AVALIATIVO — Atividade 2 · Parte A (conta nota · entrega 21/06)
+//    Começa no HANDS-ON da aula (juntos) → você TERMINA em casa (sozinho).
+//
+// Testar a lógica pura da camada data (isTokenError).
 //
 // isTokenError(error) classifica se um erro é de autenticação:
 //   - true  se error.isTokenError === true
