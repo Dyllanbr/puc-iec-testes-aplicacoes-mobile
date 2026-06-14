@@ -37,6 +37,8 @@ yarn-error.*
 # test artifacts
 coverage/
 results.json
+reports/
+.stryker-tmp/
 
 # typescript
 *.tsbuildinfo

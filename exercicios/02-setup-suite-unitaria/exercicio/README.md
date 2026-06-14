@@ -57,7 +57,10 @@ npm test          # 3 verdes (posterUrl) + alguns vermelhos (complete o expect) 
 npm test               # roda a suíte
 npm run test:watch     # watch mode (re-roda ao salvar)
 npm run test:coverage  # relatório de cobertura (abre coverage/lcov-report/index.html)
+npm run test:mutation  # mutation testing (Stryker) — RODE depois de resolver store+utils
 ```
+
+> **`test:mutation` (Stryker):** mede a *qualidade* dos testes (mutation score), não só a cobertura. Escopado a `src/store` + `src/utils` (config em `stryker.conf.json`). Precisa dos testes dessas pastas **passando** — rode após completar `favoritesStore`, `counterStore` e `posterUrl`. Relatório em `reports/mutation/mutation.html`.
 
 ---
 
