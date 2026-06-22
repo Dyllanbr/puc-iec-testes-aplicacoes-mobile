@@ -15,73 +15,23 @@ Na Aula 4 você viu Maestro ao vivo. `01-launch.yaml` é o modelo resolvido. `02
 
 ## Pré-requisitos (setup antes da entrega)
 
-**Rodar verificação de setup:**
-```bash
-curl -L https://raw.githubusercontent.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/main/setup-maestro-check.sh | bash
-```
+👉 **Guia completo de setup:** [COMECE-AQUI.md](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/03-maestro-e2e/COMECE-AQUI.md) — passo a passo por SO (macOS/Windows/Linux) + troubleshooting.
 
-Se der erro, seguir os passos abaixo manualmente.
+**Resumo (3 passos):**
 
-### Passo 1 — Android Platform Tools (adb)
+1. **App** — baixar APK pronto e instalar (sem build):
+   ```bash
+   # https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/releases
+   adb install TestesQAMobile.apk
+   ```
+2. **Maestro CLI** — `curl -Ls https://get.maestro.mobile.dev | bash` (Windows: `iwr get.maestro.mobile.dev/windows | iex`)
+3. **Verificar** — na raiz do repo:
+   ```bash
+   bash setup-maestro-check.sh        # macOS/Linux
+   # powershell -ExecutionPolicy Bypass -File setup-maestro-check.ps1   # Windows
+   ```
 
-| Sistema | Comando |
-|---|---|
-| **macOS** | `brew install android-platform-tools` |
-| **Windows** | `choco install android-platform-tools` |
-| **Linux** | `sudo apt install android-tools-adb` |
-
-Verificar: `adb --version`
-
-### Passo 2 — Emulator rodando
-
-**Opção A: Android Emulator** (VM local)
-```bash
-# Listar AVDs disponíveis
-emulator -list-avds
-
-# Iniciar emulator (ex: Medium_Phone_API_35)
-emulator -avd Medium_Phone_API_35 -no-snapshot-load -no-audio
-# Flags: -no-snapshot-load (boot fresh, rápido), -no-audio (economia RAM)
-```
-
-**Opção B: Dispositivo físico** (USB)
-```bash
-# Conectar via cabo USB
-adb devices  # deve listar seu device
-```
-
-### Passo 3 — App TestesQAMobile
-
-**Download APK (mais fácil — sem build):**
-```bash
-# Download from GitHub Releases
-curl -L https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/releases/download/v1.0/app-debug.apk -o app-debug.apk
-
-# Instalar no device/emulator
-adb install app-debug.apk
-```
-
-**Alternativa: Play Store**
-- Android: buscar "Testes QA Mobile" (free)
-- Instalar normalmente
-
-### Passo 4 — Maestro CLI
-
-```bash
-curl -Ls "https://get.maestro.mobile.dev" | bash
-# Windows: iwr get.maestro.mobile.dev/windows | iex
-
-maestro --version  # verificar: 2.6.x ou superior
-```
-
-### Passo 5 — Testar tudo junto
-
-```bash
-maestro hierarchy  # Maestro consegue enxergar o device?
-# Deve mostrar XML da tela atual
-```
-
-Se tudo passou ✅ — pronto pra entrega!
+Tudo verde ✅ → pronto pra entrega.
 
 ---
 
