@@ -53,14 +53,14 @@ Organizados por **trilha de skill** — escolha pelo que seu grupo curte, não s
 | # | Tema | O que é, em bom português | Stack sugerida | Por que é real |
 |---|------|---------------------------|----------------|-----------------|
 | 8 | **CI/CD Pipeline Mobile** | Montar a esteira automática que roda os testes, builda e prepara o app pra publicar toda vez que alguém sobe código novo — sem precisar fazer isso na mão. | GitHub Actions + Fastlane + Firebase Test Lab | Conteúdo da Aula 6. **Nível avançado (opcional, +profundidade):** flaky test quarantine ([prática documentada desde o Google Testing Blog](https://testing.googleblog.com/2016/05/); ~1.5% flake rate afeta ~16% dos testes) + DORA Change Failure Rate tracking |
-| 11 | **Mutation Testing (novo)** | Testar os TESTES: a ferramenta muda um pedacinho do código de propósito (um "mutante") e vê se algum teste pega o erro. Se nenhum teste falhar, seus testes não estavam testando de verdade. | Stryker (StrykerJS) sobre uma lib de domínio do app, com gate de CI | StrykerJS documenta suporte a Jest/React ([stryker-mutator.io/docs/stryker-js/guides/react](https://stryker-mutator.io/docs/stryker-js/guides/react/)), break-threshold vira gate real no pipeline. Escopo: módulo de domínio testável em Jest puro (não o app RN inteiro — Metro/Babel são ponto de atrito não resolvido pelo StrykerJS) |
+| 11 | **Mutation Testing (novo)** | Testar os TESTES: a ferramenta muda um pedacinho do código de propósito (um "mutante") e vê se algum teste pega o erro. Se nenhum teste falhar, seus testes não estavam testando de verdade. | Stryker (StrykerJS) sobre uma lib de domínio do app, com relatório de mutation score | StrykerJS documenta suporte a Jest/React ([stryker-mutator.io/docs/stryker-js/guides/react](https://stryker-mutator.io/docs/stryker-js/guides/react/)). Basta rodar e mostrar o relatório — gate de CI com break-threshold é bônus, não obrigatório. Escopo: módulo de domínio testável em Jest puro (não o app RN inteiro — Metro/Babel são ponto de atrito não resolvido pelo StrykerJS) |
 
 ### 🔍 Manual, Exploratório & Acessibilidade
 
 | # | Tema | O que é, em bom português | Stack sugerida | Por que é real |
 |---|------|---------------------------|----------------|-----------------|
 | 10 | **Accessibility Testing Mobile** | Testar se o app funciona pra quem usa leitor de tela, tem baixa visão ou dificuldade motora — não só pra quem enxerga bem e usa o dedo perfeitamente. | Android Accessibility Scanner + Xcode Accessibility Inspector + auditoria manual WCAG | Conecta direto com o que vimos em aula (accessibilityRole/Label no Maestro/RNTL, 02/07) — bom tema pra quem curte pensar em usuário real, não só código |
-| 12 | **Testes Manuais Estruturados → Regressão Automatizada (novo)** | Testar o app na unha, procurando bug como um detetive (sem roteiro fixo) — e depois transformar cada bug achado num teste automatizado, pra ele nunca mais voltar sem ninguém perceber. | Charters + Session-Based Test Management (Bach) **+** conversão dos bugs achados em testes automatizados (RNTL/Maestro) no CI | Pra quem curte testar manualmente e não quer o projeto inteiro em código: **Parte A** — sessões com charter, timebox, session report (mesma técnica da Aula 2); **Parte B avaliável em CI** — cada bug real achado na Parte A vira 1 teste de regressão automatizado. SBTM segue documentado como prática viva ([yrkan.com/blog/test-charter-writing](https://yrkan.com/blog/test-charter-writing/)) |
+| 12 | **Testes Manuais Estruturados → Regressão Automatizada (novo)** | Testar o app na unha, procurando bug como um detetive (sem roteiro fixo) — e depois transformar cada bug achado num teste automatizado, pra ele nunca mais voltar sem ninguém perceber. | Charters + Session-Based Test Management (Bach) **+** conversão dos bugs achados em testes automatizados (RNTL/Maestro) | Pra quem curte testar manualmente e não quer o projeto inteiro em código: **Parte A** — sessões com charter, timebox, session report (mesma técnica da Aula 2); **Parte B** — cada bug real achado na Parte A vira 1 teste de regressão automatizado, rodado e mostrado passando (CI é bônus, não obrigatório). SBTM segue documentado como prática viva ([yrkan.com/blog/test-charter-writing](https://yrkan.com/blog/test-charter-writing/)) |
 
 > Pode ser sobre o app da disciplina (CineFav/TMDB) ou outro app open source — combine com o professor se for usar outro.
 
@@ -88,7 +88,9 @@ Organizados por **trilha de skill** — escolha pelo que seu grupo curte, não s
 ### Critérios de qualidade do artefato técnico
 
 - **Reprodutibilidade:** README com passos exatos pra rodar em máquina limpa.
-- **CI verde:** GitHub Actions ou similar com badge no README.
+- **Execução demonstrada:** rodar os testes/flow e mostrar passando (print, log ou vídeo curto
+  no README) — **não precisa estar configurado em CI**, só provar que funciona de verdade.
+  CI real (GitHub Actions com badge) soma em "originalidade e profundidade", mas não é obrigatório.
 - **Cobertura adequada ao tema:** ≥ 5 testes/flows, sem testes triviais. (Tema 12: ≥ 5 bugs
   documentados na Parte A + convertidos em teste automatizado na Parte B.)
 - **Documentação inline:** comentários nos lugares certos (não em todo lugar).
