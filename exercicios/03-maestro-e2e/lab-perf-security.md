@@ -21,6 +21,9 @@ a maioria já fez sozinho.
 
 ## 1. Performance — cold start e jank (Trilha A)
 
+> **Por que importa:** esses milissegundos decidem se o usuário espera ou fecha o app antes de
+> ver a primeira tela. Ref. oficial: [Android Developers — app startup best practices](https://developer.android.com/topic/performance/appstartup/best-practices).
+
 ```bash
 adb shell am force-stop com.puciec.cinefav
 adb shell am start -W com.puciec.cinefav/.MainActivity
@@ -37,7 +40,16 @@ Rolar a lista de filmes no device **antes** de rodar o comando (ele mede o hist�
 Olhar `Janky frames` (% de frames que estouraram 16ms/60fps). Comparar com colega — variação
 normal entre emulador/device físico.
 
+**Por que não tem "fix" nessa seção:** olhamos o código do CineFav — é app limpo, sem gargalo
+plantado. Nem todo achado de QA tem correção de 1 linha; às vezes o valor é registrar o **baseline**
+(esses números de hoje) pra virar alarme se um PR futuro piorar. É um músculo de QA diferente do
+da seção 2 (achar-e-corrigir na hora): aqui é achar-e-vigiar.
+
 ## 2. Security — achado real no manifest (Trilha A e B)
+
+> **Por que importa:** com o device na mão (sem senha, sem root), dá pra extrair os dados do app
+> via `adb backup` — não é hipotético: um SDK terceiro real (EngageLab) expôs "millions of Android
+> wallets" por misconfig parecido ([Microsoft Security Blog, abr/2026](https://www.microsoft.com/en-us/security/blog/2026/04/09/intent-redirection-vulnerability-third-party-sdk-android/)).
 
 ```bash
 cd exercicios/03-maestro-e2e/pratica
@@ -48,6 +60,9 @@ Dois achados **reais** (não plantados — são o app de verdade):
 
 1. **`android:allowBackup="true"`** — permite extrair dados do app via `adb backup` sem root
    (OWASP Mobile M9/M2 — Insecure Data Storage). Ligado ao MASVS-STORAGE.
+   > **M9 e M2 não são achados diferentes** — M9 é a numeração do Mobile Top 10 2024 (atual);
+   > M2 é a numeração da lista antiga (2016). Mesma categoria (Insecure Data Storage), 2 rótulos
+   > por causa da atualização do OWASP. Ref.: [OWASP MASTG](https://mas.owasp.org/MASTG/).
 2. **`READ/WRITE_EXTERNAL_STORAGE` + `SYSTEM_ALERT_WINDOW`** — permissões que o app não usa
    (não salva/lê arquivo nenhum, não desenha overlay). Viola least privilege — superfície de
    ataque desnecessária.
