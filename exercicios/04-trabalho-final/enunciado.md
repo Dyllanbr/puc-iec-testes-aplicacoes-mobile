@@ -32,16 +32,18 @@ cobrindo esse tema — a peça que fecha a disciplina, aplicando a pirâmide de 
 
 ## ⚠️ Pré-requisito: device/emulador funcionando
 
-**9 dos 12 temas precisam de device ou emulador Android rodando** em algum momento (temas 1, 3, 5,
+**9 dos 13 temas precisam de device ou emulador Android rodando** em algum momento (temas 1, 3, 5,
 6, 7, 10, 12 — precisam pra rodar de verdade; temas 4 e 8 só em parte). Se o setup da Atividade 3
 (`exercicios/03-maestro-e2e/COMECE-AQUI.md`) parou de funcionar (trocou de máquina, deletou o
 emulador, etc.), **resolvam isso antes de escolher o tema** — não deixe pra descobrir no meio do
 prazo. Rodem `bash setup-maestro-check.sh` (raiz do repo) pra confirmar que tudo ainda funciona.
 
-**Sem device confiável?** 3 temas rodam 100% em código/API, sem precisar abrir emulador nenhuma
+**Sem device confiável?** 4 temas rodam 100% em código/API, sem precisar abrir emulador nenhuma
 vez: **tema 2** (Robot Pattern sobre RNTL — Jest puro), **tema 9** (Contract Testing — Jest+Pact),
-**tema 11** (Mutation Testing — Stryker+Jest). São opção segura pra quem não tem acesso garantido
-a device/emulador pelas próximas 2 semanas.
+**tema 11** (Mutation Testing — Stryker+Jest), **tema 13** (POM em Maestro — os flows não
+precisam rodar de verdade pra reorganizar os seletores; roda de verdade só pra validar no final,
+com device de um colega se precisar). São opção segura pra quem não tem acesso garantido a
+device/emulador pelas próximas 2 semanas.
 ## Temas disponíveis
 
 Organizados por **trilha de skill** — escolha pelo que seu grupo curte, não só pelo que parece "mais IA".
@@ -56,6 +58,7 @@ Organizados por **trilha de skill** — escolha pelo que seu grupo curte, não s
 | 2 | **Arquitetura de Suíte de Teste** *(era Native UI Testing)* | Organizar os testes que vocês já escrevem de um jeito mais limpo e reutilizável — separar "o que testar" de "como testar", pra suíte não virar bagunça conforme cresce. | **Robot Pattern sobre RNTL** (principal — RNTL é JS, vira função/classe normal) e/ou organizar `runFlow` do Maestro em camadas reutilizáveis inspiradas no Screenplay (adaptação, não o padrão actor/ability "de livro" — isso exigiria escrever um wrapper JS por cima do Maestro CLI, fora de escopo) | Robot Pattern (Jake Wharton, [jakewharton.com/testing-robots](https://jakewharton.com/testing-robots/)) é padrão vivo de organização de suíte, aplicável direto no RNTL que vocês já sabem, sem ferramenta nunca vista |
 | 5 | **Visual Regression Testing Mobile** *(era Visual AI)* | Testar se a TELA do app está visualmente certa (não só se funciona) — comparar screenshot automaticamente e pegar quando algo quebrou visualmente, tipo um botão que sumiu. | **Maestro Visual Testing** (recurso nativo, mesma ferramenta que já usam) ou **React Native Owl** (open source, feito específico pra RN) | Maestro lançou testagem visual nativa ([maestro.dev/blog/visual-testing](https://maestro.dev/blog/visual-testing)) — zero SaaS pago. Alternativa 100% open source: [React Native Owl](https://github.com/FormidableLabs/react-native-owl) (FormidableLabs), iOS+Android. Troca Applitools/Percy (SaaS pago, cobertura RN fina — maioria do material deles é React web/Storybook) por caminho gratuito e nativo do ecossistema RN |
 | 9 | **Mobile API Contract Testing** | Garantir que o app e o backend continuam "se entendendo" — se o backend mudar um campo da API sem avisar, o teste acusa antes de quebrar em produção. | Pact + Jest (consumer-driven contracts). **Atenção:** CineFav roda 100% mockado por padrão (sem rede) — pra ter algo pra contratar, **ative o modo real** com token TMDB gratuito (`EXPO_PUBLIC_TMDB_TOKEN` no `.env`, ver `pratica/.env.example`) antes de começar | Pact com Jest é ecossistema ativo em apps React/RN que consomem API própria ([reflectoring.io/pact-react-consumer](https://reflectoring.io/pact-react-consumer/)) — TMDB é API real, pública, gratuita, dá pra contratar de verdade |
+| 13 | **POM (Page Object Model) em Maestro** *(novo, 03/07/2026)* | Separar o `id` de cada elemento de tela (login, busca, favoritos) de como o teste interage com ele — hoje o seletor tá espalhado direto nos 5 flows; POM centraliza num arquivo por tela, então renomear 1 `testID` conserta em 1 lugar, não em 5. | `runScript` + `output` do próprio Maestro (sem lib externa) — pasta `elements/` com 1 `.js` por tela, flows referenciam via `${output.tela.campo}` | Padrão oficialmente documentado pelo Maestro ([docs.maestro.dev/examples/recipes/implementing-the-page-object-model-pom](https://docs.maestro.dev/examples/recipes/implementing-the-page-object-model-pom)) — não é adaptação como o tema 2, é o recipe que a própria ferramenta recomenda. Detalhe passo a passo em `temas/13-pom-maestro/README.md` |
 
 ### 🧠 IA aplicada a testes mobile
 
